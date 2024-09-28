@@ -11,7 +11,7 @@ namespace Testing_New.ViewModels
         #region Title : string - Заголовок окна
 
         /// <summary>Заголовок окна</summary>
-        private string _Title = "Главное окно";
+        private string _Title = "Тестирование";
 
         /// <summary>Заголовок окна</summary>
         public string Title
