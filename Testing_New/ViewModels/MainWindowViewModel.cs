@@ -21,7 +21,7 @@ namespace Testing_New.ViewModels
         }
 
         #endregion
-
+        
         #region Status : string - Статус
 
         /// <summary>Статус</summary>
