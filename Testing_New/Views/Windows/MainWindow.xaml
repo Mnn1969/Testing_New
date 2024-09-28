@@ -6,7 +6,7 @@
         xmlns:l="clr-namespace:Testing_New"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Title="{Binding Title}" 
-        Width="800" Height="450">
+        Width="800" Height="450" WindowState="Maximized" ResizeMode="CanMinimize">
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <Menu.ItemsPanel>
@@ -28,10 +28,10 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock Text="Вход выполнил:" Margin="2,0,2,0"></TextBlock>
             <StatusBarItem DockPanel.Dock="Right">
                 <ResizeGrip/>
             </StatusBarItem>
-            <StatusBarItem Content="{Binding Status}"/>
         </StatusBar>
         <Grid>
             <Grid.ColumnDefinitions>
