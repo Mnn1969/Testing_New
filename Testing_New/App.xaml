@@ -12,7 +12,7 @@
                 <ResourceDictionary Source="Resources/Base/Brushes.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <vm:ViewModelLocator x:Key="Locator" />
+            <vm:ViewModelLocator x:Key="Locator"/>
 
         </ResourceDictionary>
 
