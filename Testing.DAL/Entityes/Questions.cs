@@ -4,12 +4,12 @@ namespace Testing.DAL.Entityes
 {
     public class Questions : Subject
     {
-        public ICollection<Answers> Answers { get; set; }
+        public ICollection<Answers>? Answers { get; set; }
 
         [DisplayName("? по теме")]
-        public string? QuestionsSubject { get; set; }
+        public new string? QuestionsSubject { get; private set; }
 
         [DisplayName("Вопрос")]
-        public string? Question { get; set; }
+        public string? Question { get;  private set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
 using Testing_New.Services;
 using Testing_New.ViewModels;
 
@@ -13,14 +14,13 @@ namespace Testing_New
 
         private static IHost? __Host;
 
-        public static IHost Host => __Host ??= Microsoft.Extensions.Hosting.Host
-            .CreateDefaultBuilder(Environment.GetCommandLineArgs())
-            .ConfigureAppConfiguration(cfg => cfg.AddJsonFile("appsettings.json", true, true))
-            .ConfigureServices((host, services) => services
-                .AddViews()
-                .AddServices())
-            .Build();
+        public static IHost Host => __Host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+            
 
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection service)
+        {
+
+        }
         public static IServiceProvider Services => Host.Services;
 
         protected override async void OnStartup(StartupEventArgs e)
