@@ -1,13 +1,23 @@
 ﻿using System.ComponentModel;
-using Testing.DAL.Entityes.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace Testing.DAL.Entityes
 {
     public class Answers
     {
-        public int Id { get; private set; }
+        [Required]
+        public Questions? Questions { get; set; }
 
-        [DisplayName("Правельный =1")]
-        public int Correct { get; private set; }
+        public int Id { get; set; }
+
+        [DisplayName("Правельный = True")]
+        [Required]
+        public bool  Correct { get; set; }
+        
+        [DisplayName("Ответы")]
+        [Required]
+        public string? Answer { get; set; }
+
+
     }
 }

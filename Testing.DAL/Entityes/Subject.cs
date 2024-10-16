@@ -1,25 +1,27 @@
 ﻿using System.ComponentModel;
-using Testing.DAL.Entityes.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Testing.DAL.Entityes
 {
     public class Subject 
     {
-        private ICollection<Questions>? Questions { get; set; }
+        public ICollection<Questions> Questions { get; } = new List<Questions>();
 
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         [DisplayName("Тема")]
-        public  string? SubjectName { get; private set; }
+        [Required]
+        public  string? SubjectName { get; set; }
 
         [DisplayName("Вопросов по теме")]
-        public int QuestionsSubject { get; private set; }
+        public int QuestionsSubject { get; set; }
 
         [DisplayName("Доп. вопросы")]
-        public int AdditionalQuestions { get; private set; }
+        public int AdditionalQuestions { get; set; }
 
         [DisplayName("Время")]
-        public int TimeTesting { get; private set; }
+        public int TimeTesting { get; set; }
 
     }
 }

@@ -1,22 +1,19 @@
 ﻿using System.ComponentModel;
-using Testing.DAL.Entityes.Base;
 
 namespace Testing.DAL.Entityes
 {
     public class Questions
     {
-        private ICollection<Answers>? Answers { get; set; }
+        public ICollection<Answers> Answers { get; } = new List<Answers>();
 
-        
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public int SubjectId { get; private set; }
+        [DisplayName("? по теме")] 
+        public bool QuestionsSubject { get; set; }
 
+        [DisplayName("Вопрос")] 
+        public string? Question { get; set; }
 
-        [DisplayName("? по теме")]
-        public string? QuestionsSubject { get; private set; }
-
-        [DisplayName("Вопрос")]
-        public string? Question { get; private set; }
+        public Subject? Subject { get; set; }
     }
 }

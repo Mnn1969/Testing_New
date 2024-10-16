@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Testing.DAL.Entityes.Base;
 
 namespace Testing.DAL.Entityes;
 
-public class Person : NamedEntity
+public class Person
 {
     [DisplayName("Табельный №")]
-    public string? IdTabel { get; private set; }
-
+    [Key]
+    public string? TabelId { get; private set; }
+    [Required]
     [DisplayName("Фамилия")]
     public string? LastName { get; private set; }
 
@@ -19,8 +19,9 @@ public class Person : NamedEntity
     public string? MiddleName { get; private set; }
 
     [DisplayName("Статус")]
+    [Required]
     public string? Status { get; private set; }
-
+    [Required]
     [DisplayName("Пароль")]
     public string? Password { get; private set; }
 }

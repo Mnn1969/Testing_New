@@ -1,5 +1,4 @@
-﻿using System.Data.Common;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Testing.DAL.Entityes;
 
 namespace Testing.DAL.Context
@@ -15,5 +14,12 @@ namespace Testing.DAL.Context
         public DbSet<Person> Persons { get; set; }
 
         public TestingDB(DbContextOptions<TestingDB>  options) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Subject>()
+                .Property(b => b.TimeTesting)
+                .HasDefaultValue(30);
+        }
     }
 }
