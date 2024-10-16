@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Testing.DAL.Entityes.Base;
 
-namespace Testing.DAL.Entityes.Base;
+namespace Testing.DAL.Entityes;
 
-public abstract class Person : NamedEntity
+public class Person : NamedEntity
 {
     [DisplayName("Табельный №")]
     public string? IdTabel { get; private set; }

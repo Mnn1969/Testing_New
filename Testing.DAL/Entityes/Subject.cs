@@ -3,12 +3,14 @@ using Testing.DAL.Entityes.Base;
 
 namespace Testing.DAL.Entityes
 {
-    public class Subject : NamedEntity
+    public class Subject 
     {
-        public ICollection<Questions>? Questions { get; private set; }
+        private ICollection<Questions>? Questions { get; set; }
+
+        public int Id { get; private set; }
 
         [DisplayName("Тема")]
-        public string? SubjectName { get; private set; }
+        public  string? SubjectName { get; private set; }
 
         [DisplayName("Вопросов по теме")]
         public int QuestionsSubject { get; private set; }
